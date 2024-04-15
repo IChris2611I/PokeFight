@@ -2,10 +2,16 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+   
+}
+
+body{
+    display: flex;
+    justify-content: center;
 }
 
 main{
     width: 75rem;
     height: 100vh;
-    background-color: aqua;
+    background-color: grey;
 }

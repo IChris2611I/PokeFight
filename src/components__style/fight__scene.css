@@ -1,0 +1,8 @@
+.fight__scene{
+    height: 80vh;
+    width: auto;
+    background: url('../assets/arena3.jpg') center/cover no-repeat;
+    background-color: #ffffff;
+    font-size: 13px;
+}
+

@@ -1,4 +1,7 @@
-@import './components__style/main.css'
-
+@import './components__style/main.css';
+@import './components__style/fight__scene.css';
+@import './components__style/fight__scene__top.css';
+@import './components__style/fight__scene__bot.css';
+@import './components__style/controls.css';
 
 
