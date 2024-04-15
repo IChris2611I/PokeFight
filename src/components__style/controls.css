@@ -1,0 +1,47 @@
+.controls{
+    display: flex;    
+    height: 20vh;
+}
+
+.show__text{
+    margin: auto;
+    color: black;
+    font-weight: bold;
+    font-size: 30px;
+    padding: 20px 30px;
+    width: 50%;
+    height: 80%;
+    background-color: rgba(226, 223, 223, 0.87);
+    border: 5px solid  rgb(243, 255, 69);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1) inset;
+    border-radius: 10px;
+}
+
+.button__block{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 50%;
+    height: 100%;
+    gap: 5px;
+    padding: 10px;
+}
+
+button:nth-child(1) {
+    background-color: rgb(226, 93, 93) !important;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.473);
+}
+
+button:nth-child(2){
+    background-color: rgb(192, 129, 13) !important;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.473);
+}
+
+button:nth-child(3){
+    background-color: rgb(25, 202, 84) !important;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.473);
+}
+
+button:nth-child(4){
+    background-color: rgb(19, 64, 161) !important;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.473);
+}

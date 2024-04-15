@@ -55,7 +55,7 @@ function App() {
 
         <div className="controls">
           <div className="show__text">
-              <p>Show Text Combat</p>
+              <p>Show Text Combat,Show Text Combat,Show Text Combat,Show Text Combat</p>
           </div>
           <div className="button__block">
             <button><p>Attack 1</p></button>

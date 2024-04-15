@@ -13,5 +13,6 @@ body{
 main{
     width: 75rem;
     height: 100vh;
-    background-color: grey;
+    background-image: linear-gradient(to bottom right, #52c25698, #439265);
+
 }
