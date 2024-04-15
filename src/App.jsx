@@ -1,4 +1,4 @@
-import './App.css'
+import './full__styles.css'
 
 function App() {
 
