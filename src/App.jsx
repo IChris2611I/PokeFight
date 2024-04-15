@@ -8,7 +8,7 @@ import { useState } from 'react'
 
 function App() {
   const [currentPokemon, setCurrentPokemon] = useState(pokemons[3]);
-  const [opponentPokemon, setOpponentPokemon] = useState(pokemons[1]);
+  const [opponentPokemon, setOpponentPokemon] = useState(pokemons[0]);
   const [currentHp, setCurrentHp] = useState(250);
   const [opponentHp, setOponnentHp] = useState(250);
   const [showText, setShowText] = useState("Show Text Combat,Show Text Combat");
@@ -51,7 +51,7 @@ function App() {
               </div>
             </div>
             <div className="pokemon__image1">
-              <img src={blastoise} alt="Pokemon"/>
+              <img src={opponentPokemon.imgSrc} alt="Pokemon"/>
             </div>
           </div>
 
