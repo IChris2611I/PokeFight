@@ -1,27 +1,37 @@
+import Blastoise from '../assets/blastoise.gif';
+import Dragonite from '../assets/dragonite.gif';
+import Charizard from '../assets/charizard.gif';
+import Mewtwo from '../assets/mewtwo.gif';
+
 export const pokemons = [
     {
         id : 1,
         name: "Blastoise",
-        imgSrc: "",
+        imgSrc: `${Blastoise}`,
         level: 17,
         lifePoint: 250,
         attacks : [
             {
-                name: "Hydro Cannon !",
+                name: "Hydro Cannon",
                 damage: 110,
-                text: `Blastoise lance ${this.name}`
+                getText: function() {
+                    return `Bastoise lance ${this.name}`;
+                }
             },
             {
-                name: "Pistolet à O!",
+                name: "Pistolet à O",
                 damage: 50,
-                text: `Blastoise lance ${this.name}`,
+                getText: function() {
+                    return `Bastoise lance ${this.name}`;
+                }
 
             },
             {
-                name: " Charge !",
+                name: "Charge",
                 damage: 30,
-                text : `Blastoise lance ${this.name}`
-                
+                getText: function() {
+                    return `Bastoise lance ${this.name}`;
+                }
             },
         ],
         hasTakenDamage(damage) {
@@ -32,26 +42,31 @@ export const pokemons = [
     {
         id : 2,
         name: "Charizard",
-        imgSrc: "../assets/charizard.gif",
+        imgSrc: `${Charizard}`,
         level: 17,
         lifePoint: 250,
         attacks : [
             {
                 name: "Feu d'Enfer",
                 damage: 100,
-                text: `Charizard lance ${this.name}`
+                getText: function() {
+                    return `Charizard lance ${this.name}`;
+                }
             },
             {
                 name: " Draco-Griffe",
                 damage: 80,
-                text: `Charizard lance ${this.name}`,
+                getText: function() {
+                    return `Charizard lance ${this.name}`;
+                }
 
             },
             {
                 name: " Charge !",
                 damage: 30,
-                text : `Charizard lance ${this.name}`
-                
+                getText: function() {
+                    return `Charizard lance ${this.name}`;
+                }
             },
         ],
         hasTakenDamage(damage) {
@@ -62,26 +77,31 @@ export const pokemons = [
     {
         id : 3,
         name: "Dragonite",
-        imgSrc: "../assets/dragonite.gif",
+        imgSrc: `${Dragonite}`,
         level: 17,
         lifePoint: 250,
         attacks : [
             {
                 name: "Point du dragon  !",
                 damage: 70,
-                text: `Dragonite lance ${this.name}`
+                getText: function() {
+                    return `Dragonite lance ${this.name}`;
+                }
             },
             {
                 name: " Electro Canon !",
                 damage: 100,
-                text: `Dragonite lance ${this.name}`,
+                getText: function() {
+                    return `Dragonite lance ${this.name}`;
+                }
 
             },
             {
                 name: " Charge !",
                 damage: 30,
-                text : `Dragonite lance ${this.name}`
-                
+                getText: function() {
+                    return `Dragonite lance ${this.name}`;
+                }
             },
         ],
         hasTakenDamage(damage) {
@@ -91,28 +111,32 @@ export const pokemons = [
 
     {
         id : 4,
-        name: "Mewtwo",
-        imgSrc: "../assets/mewtwo.gif",
+        name: `Mewtwo`,
+        imgSrc: `${Mewtwo}`,
         level: 17,
         lifePoint: 250,
         attacks : [ 
             {
-                name: "Attack Psychic !",
+                name: "Attack Psychic",
                 damage: 80,
-                text: `Mewtwo lance ${this.name}`
+                getText: function() {
+                    return `Mewtwo lance ${this.name}`;
+                }
             },
             {
-                name: " Sphère d'aura !",
+                name: "Sphère d'aura",
                 damage: 100,
-                text: `Mewtwo lance ${this.name}`,
-
+                getText: function() {
+                    return `Mewtwo lance ${this.name}`;
+                }
             },
 
             {
-                name: " Charge !",
+                name: "Charge",
                 damage: 30,
-                text : `Mewtwo lance ${this.name}`
-                
+                getText: function() {
+                    return `Mewtwo lance ${this.name}`;
+                }
             },
         ],
         hasTakenDamage(damage) {
