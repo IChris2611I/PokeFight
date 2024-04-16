@@ -58,10 +58,9 @@
     position: absolute;
     font-weight: bold;
     color: rgb(0, 0, 0);
-    top: 35px;
+    top: 38px;
     left: 150px;
     z-index: 100;
-    /* transform: translate(-50%, 0); */
 }
 
 .hp__innerBar2 {
