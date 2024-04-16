@@ -14,8 +14,7 @@
 }
 
 .pokemon__name{
-    display: flex;
-    margin-bottom: 10px;
+    display: flex;    
 }
 
 .secondary{

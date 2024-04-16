@@ -3,31 +3,52 @@ import blastoise from './assets/blastoise.gif'
 // import Charizard from './assets/charizard.gif'
 import Button from './components/Button'
 import { pokemons } from './data__pokemon/pokemon' 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 
 function App() {
   const [currentPokemon, setCurrentPokemon] = useState(pokemons[3]);
   const [opponentPokemon, setOpponentPokemon] = useState(pokemons[0]);
+
+  const [isAnimated, setIsAnimated] = useState(false);
+
   const [currentHp, setCurrentHp] = useState(250);
   const [opponentHp, setOponnentHp] = useState(250);
-  const [showText, setShowText] = useState("Show Text Combat,Show Text Combat");
+
+  const [showText, setShowText] = useState("Début du combat !");
 
   function handleButton(e) {
     const currentAttack = e.currentTarget.innerText;
-    const attackInfos = currentPokemon.attacks?.filter(attack => attack.name === currentAttack)[0];
+    const attackInfos = currentPokemon.attacks?.filter(attack => attack.name === currentAttack)[0];   
     setShowText(attackInfos.getText());
     setOponnentHp(opponentHp - attackInfos.damage);
     opponentAttack();
-  }
+    setIsAnimated(true);    
+    setTimeout(() => {
+      setIsAnimated(false)
+    }, 2000);
+  }  
 
-  function opponentAttack() {
+  function opponentAttack() {    
     setTimeout(() => {
       const attackInfos = opponentPokemon.attacks[0];
       setShowText(attackInfos.getText());
       setCurrentHp(currentHp - attackInfos.damage);
-    }, 3000)
+    }, 2000)
   }
+
+  
+  // const userHp = () => currentHp === 0 ? alert("You loose the fight noob !") : null
+  // const ennemyHp = () => opponentHp === 0 ? alert("You win the fight, congratz !") : null
+  
+  // useEffect(() => {
+   
+  //   userHp()
+  //   ennemyHp()
+  //   console.log("test")
+
+  // }, [currentHp,opponentHp])
+  
 
   return (
     <>
@@ -73,7 +94,7 @@ function App() {
               </div>
             </div>
             <div className="pokemon__image2">
-              <img src={currentPokemon.imgSrc} alt={currentPokemon.name}/>
+              <img className={isAnimated ? 'attack__anim' : '' } src={currentPokemon.imgSrc} alt={currentPokemon.name}/>
             </div>
           </div>
         </div>
