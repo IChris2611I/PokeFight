@@ -52,6 +52,8 @@ STEP 5 : WE DID IT !!!!!!!!!!!!!!!!!!
 
 Yes, we did it and we are proud of ourselves.
 
+TRY IT : https://poke-fight-five.vercel.app/
+
 PS : We wanted to implement the ability to switch between Pokémon with the 'Pokemon' button. However, the logic and time constraints didn't allow us to do so.
 
 HAVE A GOOD DAY ! 
