@@ -74,6 +74,37 @@ button:nth-child(4){
 	}
 }
 
-.attack__anim{
+.attack__anim1{
     animation: attackAnime 1s linear 0s 0.8 normal none;
+}
+
+
+
+.attack__anim2{
+    animation: attackAnime 1s linear 0s 0.8 normal none;
+}
+
+
+@keyframes tookAttack {
+	0%,
+	50%,
+	100% {
+		opacity: 1;
+	}
+
+	25%,
+	75% {
+		opacity: 0;
+	}
+}
+
+.took__attack {
+    animation: tookAttack 1s ease 0s 1 normal forwards;
+
+}
+
+
+.took__attack2 {
+    animation: tookAttack 1s ease 0s 1 normal forwards;
+
 }

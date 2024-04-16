@@ -10,23 +10,24 @@ function App() {
   const [currentPokemon, setCurrentPokemon] = useState(pokemons[3]);
   const [opponentPokemon, setOpponentPokemon] = useState(pokemons[0]);
 
-  const [isAnimated, setIsAnimated] = useState(false);
+  const [dealAttack, setdealAttack] = useState(false);
+  const [tookAttack, setTookAttack] = useState(false)
 
   const [currentHp, setCurrentHp] = useState(250);
   const [opponentHp, setOponnentHp] = useState(250);
 
   const [showText, setShowText] = useState("Début du combat !");
 
-  function handleButton(e) {
+  function userAttack(e) {
     const currentAttack = e.currentTarget.innerText;
     const attackInfos = currentPokemon.attacks?.filter(attack => attack.name === currentAttack)[0];   
     setShowText(attackInfos.getText());
     const oppLife = opponentHp - attackInfos.damage >= 0 ? opponentHp - attackInfos.damage : 0 
     setOponnentHp(oppLife);
     opponentAttack();
-    setIsAnimated(true);    
+    setdealAttack(true);    
     setTimeout(() => {
-      setIsAnimated(false)
+      setdealAttack(false)
     }, 2000);
   }  
 
@@ -36,6 +37,10 @@ function App() {
       setShowText(attackInfos.getText());
       setCurrentHp(currentHp - attackInfos.damage);
     }, 2000)
+    setdealAttack(true);    
+    setTimeout(() => {
+      setdealAttack(false)
+    }, 2000);
   }
 
   
@@ -77,7 +82,7 @@ function App() {
               </div>
             </div>
             <div className="pokemon__image1">
-              <img src={opponentPokemon.imgSrc} alt="Pokemon"/>
+              <img className={dealAttack ? 'attack__anim' : '' } src={opponentPokemon.imgSrc} alt="Pokemon"/>
             </div>
           </div>
 
@@ -99,7 +104,7 @@ function App() {
               </div>
             </div>
             <div className="pokemon__image2">
-              <img className={isAnimated ? 'attack__anim' : '' } src={currentPokemon.imgSrc} alt={currentPokemon.name}/>
+              <img className={dealAttack ? 'attack__anim2' : '' } src={currentPokemon.imgSrc} alt={currentPokemon.name}/>
             </div>
           </div>
         </div>
@@ -109,7 +114,7 @@ function App() {
               <p>{showText}</p>
           </div>
           <div className="button__block">
-            {currentPokemon.attacks.map((attack, index) => <Button onAttack={handleButton} key={index}>{attack.name}</Button>)}
+            {currentPokemon.attacks.map((attack, index) => <Button onAttack={userAttack} key={index}>{attack.name}</Button>)}
             <Button>Pokemon</Button>
           </div>
         </div>
