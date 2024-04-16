@@ -21,7 +21,8 @@ function App() {
     const currentAttack = e.currentTarget.innerText;
     const attackInfos = currentPokemon.attacks?.filter(attack => attack.name === currentAttack)[0];   
     setShowText(attackInfos.getText());
-    setOponnentHp(opponentHp - attackInfos.damage);
+    const oppLife = opponentHp - attackInfos.damage >= 0 ? opponentHp - attackInfos.damage : 0 
+    setOponnentHp(oppLife);
     opponentAttack();
     setIsAnimated(true);    
     setTimeout(() => {
@@ -38,16 +39,20 @@ function App() {
   }
 
   
-  // const userHp = () => currentHp === 0 ? alert("You loose the fight noob !") : null
-  // const ennemyHp = () => opponentHp === 0 ? alert("You win the fight, congratz !") : null
-  
-  // useEffect(() => {
-   
-  //   userHp()
-  //   ennemyHp()
-  //   console.log("test")
+  useEffect(() => {
+    if (currentHp === 0) {
+      setTimeout(() => {
+        alert("You loose the fight! Try again !")
+        window.location.reload()
+      },1000);
 
-  // }, [currentHp,opponentHp])
+    } else if (opponentHp === 0) {
+      setTimeout(() => {
+        alert("You won the fight! Play again !")
+        window.location.reload()
+      }, 1000)
+          }    
+  }, [currentHp,opponentHp])
   
 
   return (

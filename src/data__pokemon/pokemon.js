@@ -13,7 +13,7 @@ export const pokemons = [
         attacks : [
             {
                 name: "Hydro Cannon",
-                damage: 110,
+                damage: 10,
                 getText: function() {
                     return `Bastoise lance ${this.name}`;
                 }
