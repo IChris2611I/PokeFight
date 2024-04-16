@@ -10,8 +10,11 @@ function App() {
   const [currentPokemon, setCurrentPokemon] = useState(pokemons[3]);
   const [opponentPokemon, setOpponentPokemon] = useState(pokemons[0]);
 
-  const [dealAttack, setdealAttack] = useState(false);
-  const [tookAttack, setTookAttack] = useState(false)
+  const [userDealAttack, setUserDealAttack] = useState(false);
+  const [userTookAttack, setUserTookAttack] = useState(false);
+
+  const [oppDealAttack, setOppDealAttack] = useState(false);
+  const [oppTookAttack, setOppTookAttack] = useState(false);
 
   const [currentHp, setCurrentHp] = useState(250);
   const [opponentHp, setOponnentHp] = useState(250);
@@ -23,24 +26,40 @@ function App() {
     const attackInfos = currentPokemon.attacks?.filter(attack => attack.name === currentAttack)[0];   
     setShowText(attackInfos.getText());
     const oppLife = opponentHp - attackInfos.damage >= 0 ? opponentHp - attackInfos.damage : 0 
-    setOponnentHp(oppLife);
-    opponentAttack();
-    setdealAttack(true);    
+
     setTimeout(() => {
-      setdealAttack(false)
+      setOponnentHp(oppLife);
+    }, 2000)
+
+    opponentAttack();
+    setUserDealAttack(true);   
+    setOppTookAttack(true);
+    
+    setTimeout(() => {
+      setOppTookAttack(false);
+      setUserDealAttack(false);
     }, 2000);
   }  
 
-  function opponentAttack() {    
+  function opponentAttack(e) {    
     setTimeout(() => {
       const attackInfos = opponentPokemon.attacks[0];
       setShowText(attackInfos.getText());
-      setCurrentHp(currentHp - attackInfos.damage);
-    }, 2000)
-    setdealAttack(true);    
+      setOppDealAttack(true);
+    }, 3000)
+
     setTimeout(() => {
-      setdealAttack(false)
-    }, 2000);
+      setUserTookAttack(true);
+      const userLife = currentHp - 80 >= 0 ? currentHp - 80 : 0 
+      setCurrentHp(userLife);
+
+      setTimeout(() => {
+        setOppDealAttack(false);
+        setUserTookAttack(false);
+      }, 2000);
+      
+    }, 4000);
+
   }
 
   
@@ -82,7 +101,7 @@ function App() {
               </div>
             </div>
             <div className="pokemon__image1">
-              <img className={dealAttack ? 'attack__anim' : '' } src={opponentPokemon.imgSrc} alt="Pokemon"/>
+              <img className={oppDealAttack ? 'attack__anim' : oppTookAttack ? 'took__attack' : '' } src={opponentPokemon.imgSrc} alt="Pokemon"/>
             </div>
           </div>
 
@@ -104,7 +123,7 @@ function App() {
               </div>
             </div>
             <div className="pokemon__image2">
-              <img className={dealAttack ? 'attack__anim2' : '' } src={currentPokemon.imgSrc} alt={currentPokemon.name}/>
+              <img className={userDealAttack ? 'attack__anim2' : userTookAttack ? 'took__attack2' :'' } src={currentPokemon.imgSrc} alt={currentPokemon.name}/>
             </div>
           </div>
         </div>

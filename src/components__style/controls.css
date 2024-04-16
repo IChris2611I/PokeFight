@@ -1,9 +1,9 @@
-.controls{
-    display: flex;    
+.controls {
+    display: flex;
     height: 20vh;
 }
 
-.show__text{
+.show__text {
     margin: auto;
     color: black;
     font-weight: bold;
@@ -12,12 +12,12 @@
     width: 50%;
     height: 80%;
     background-color: rgba(226, 223, 223, 0.87);
-    border: 5px solid  rgb(243, 255, 69);
+    border: 5px solid rgb(243, 255, 69);
     box-shadow: 0 0 20px rgba(0, 0, 0, 1) inset;
     border-radius: 10px;
 }
 
-.button__block{
+.button__block {
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 50%;
@@ -31,80 +31,74 @@ button:nth-child(1) {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.473);
 }
 
-button:nth-child(2){
+button:nth-child(2) {
     background-color: rgb(192, 129, 13) !important;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.473);
 }
 
-button:nth-child(3){
+button:nth-child(3) {
     background-color: rgb(25, 202, 84) !important;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.473);
 }
 
-button:nth-child(4){
+button:nth-child(4) {
     background-color: rgb(19, 64, 161) !important;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.473);
 }
 
 @keyframes attackAnime {
-	0%,
-	100% {
-		transform: translateX(0);
-	}
+    0%,
+    100% {
+        transform: translateX(0);
+    }
 
-	10%,
-	30%,
-	50%,
-	70% {
-		transform: translateX(-10px);
-	}
+    10%,
+    30%,
+    50%,
+    70% {
+        transform: translateX(-10px);
+    }
 
-	20%,
-	40%,
-	60% {
-		transform: translateX(10px);
-	}
+    20%,
+    40%,
+    60% {
+        transform: translateX(10px);
+    }
 
-	80% {
-		transform: translateX(8px);
-	}
+    80% {
+        transform: translateX(8px);
+    }
 
-	90% {
-		transform: translateX(-8px);
-	}
+    90% {
+        transform: translateX(-8px);
+    }
 }
 
-.attack__anim1{
+.attack__anim {
     animation: attackAnime 1s linear 0s 0.8 normal none;
 }
 
-
-
-.attack__anim2{
+.attack__anim2 {
     animation: attackAnime 1s linear 0s 0.8 normal none;
 }
-
 
 @keyframes tookAttack {
-	0%,
-	50%,
-	100% {
-		opacity: 1;
-	}
+    0%,
+    50%,
+    100% {
+        opacity: 1;
+    }
 
-	25%,
-	75% {
-		opacity: 0;
-	}
+    25%,
+    75% {
+        opacity: 0;
+    }
 }
 
 .took__attack {
-    animation: tookAttack 1s ease 0s 1 normal forwards;
-
+    animation: tookAttack 1s ease 1s 1 normal forwards;
 }
-
 
 .took__attack2 {
     animation: tookAttack 1s ease 0s 1 normal forwards;
-
 }
