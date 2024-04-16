@@ -1,33 +1,32 @@
-.fight__scene__bot{
+.fight__scene__bot {
     height: 50%;
     width: auto;
     position: relative;
 }
 
 .position__bot {
-    clip-path: polygon(5% 0, 100% 0%, 100% 100%, 0% 100%); 
+    clip-path: polygon(5% 0, 100% 0%, 100% 100%, 0% 100%);
     position: absolute;
     bottom: 0;
     right: 0;
 }
 
-.pokemon__name2{
-    display: flex;   
+.pokemon__name2 {
+    display: flex;
     flex-direction: row-reverse;
-    
 }
 
-.secondary2{
+.secondary2 {
     display: flex;
-    align-items: center;    
+    align-items: center;
     flex-direction: row-reverse;
     font-size: 20px;
     padding: 0 90px;
 }
 
-.pokemon__image2{
+.pokemon__image2 {
     position: absolute;
-    bottom: 100px;    
+    bottom: 100px;
     img {
         width: 500px;
     }
@@ -39,33 +38,35 @@
     font-size: 20px;
 }
 
-.hp__bar__container2{
+.hp__bar__container2 {
     display: flex;
     justify-content: end;
+    align-items: center;
 }
 
 .hp__bar2 {
-    
     display: flex;
     align-items: center;
     flex-direction: row-reverse;
     height: 20px;
-    width: 90%;
-    gap: 10px;    
+    width: 85%;
+    gap: 10px;
+    background-color: #d6d6d6;
 }
 
+.hp__bar2 > span {
+    position: absolute;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    top: 35px;
+    left: 150px;
+    z-index: 100;
+    /* transform: translate(-50%, 0); */
+}
 
 .hp__innerBar2 {
     position: relative;
     height: 100%;
     width: 100%;
     background-color: rgb(0, 255, 55);
-
-    span {
-        position: absolute;
-        font-weight: bold;
-        color: rgb(15, 28, 212);
-        top: 0px;
-        left: 80px;
-    }
 }

@@ -1,6 +1,4 @@
 import './full__styles.css'
-import blastoise from './assets/blastoise.gif'
-// import Charizard from './assets/charizard.gif'
 import Button from './components/Button'
 import { pokemons } from './data__pokemon/pokemon' 
 import { useEffect, useState } from 'react'
@@ -93,9 +91,9 @@ function App() {
                 </div>                
               </div>
               <div className="hp__bar__container">
-                <div className="hp__bar">
                   <span className='first__span'>HP</span>
-                  <div className="hp__innerBar"><span>{opponentHp}</span>
+                <div className="hp__bar">
+                  <div className="hp__innerBar" style={{ width : `${(opponentHp / 250) * 100}%`}}><span>{opponentHp}</span>
                   </div>
                 </div>
               </div>
@@ -115,9 +113,10 @@ function App() {
                 </div>                
               </div>
               <div className="hp__bar__container2">
-                <div className="hp__bar2">
                   <span className='first__span'>HP</span>
-                  <div className="hp__innerBar"><span>{currentHp}</span>
+                <div className="hp__bar2">
+                  <span>{currentHp}</span>
+                  <div className="hp__innerBar" style={{ width : `${(currentHp / 250) * 100}%`}}>
                   </div>
                 </div>
               </div>
